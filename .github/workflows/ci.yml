@@ -22,6 +22,7 @@ jobs:
         run: npm test
 
       - name: Upload coverage to Coveralls
-        run: coveralls < coverage/lcov.info
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true

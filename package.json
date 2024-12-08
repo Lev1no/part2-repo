@@ -1,0 +1,21 @@
+{
+  "name": "part2-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "coverage": "nyc --reporter=lcov --reporter=text npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "coveralls": "^3.1.1",
+    "jest": "^29.7.0",
+    "nyc": "^17.1.0"
+  }
+}

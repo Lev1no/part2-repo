@@ -1,3 +1,6 @@
-test('placeholder test for Add', () => {
-  expect(true).toBe(true);
+const add = require('../src/add');
+
+test('adds two numbers (placeholder)', () => {
+  const result = add(2, 3); // Execute the function
+  expect(result).toBe(5); // Validate the result
 });

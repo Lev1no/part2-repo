@@ -8,14 +8,16 @@
   },
   "scripts": {
     "test": "jest --coverage",
-    "coverage": "nyc --reporter=lcov --reporter=text npm test"
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "babel-jest": "^29.7.0",
     "coveralls": "^3.1.1",
-    "jest": "^29.7.0",
-    "nyc": "^17.1.0"
+    "jest": "^29.7.0"
   }
 }

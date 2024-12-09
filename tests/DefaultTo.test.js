@@ -1,6 +1,19 @@
-const defaultTo = require('../src/defaultTo');
+import defaultTo from '../src/defaultTo';
 
-test('returns default value when input is null or undefined', () => {
-  const result = defaultTo(undefined, 'default'); // Call the defaultTo function
-  expect(result).toBe('default'); // Verify the result
+describe('defaultTo', () => {
+  test('returns value if it is not null or undefined', () => {
+    expect(defaultTo(1, 10)).toBe(1);
+  });
+
+  test('returns defaultValue if value is undefined', () => {
+    expect(defaultTo(undefined, 10)).toBe(10);
+  });
+
+  test('returns defaultValue if value is null', () => {
+    expect(defaultTo(null, 10)).toBe(10);
+  });
+
+  test('returns defaultValue if value is NaN', () => {
+    expect(defaultTo(NaN, 10)).toBe(10);
+  });
 });

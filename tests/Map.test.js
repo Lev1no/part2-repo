@@ -1,7 +1,15 @@
-const map = require('../src/map');
+import map from '../src/map';
 
-test('maps each element to a new value', () => {
-  const array = [1, 2, 3];
-  const result = map(array, (x) => x * 2); // Call the map function
-  expect(result).toEqual([2, 4, 6]); // Verify the result
+describe('map', () => {
+  test('maps each element to a new value', () => {
+    const array = [1, 2, 3];
+    const iteratee = (x) => x * 2;
+    expect(map(array, iteratee)).toEqual([2, 4, 6]);
+  });
+
+  test('handles empty arrays', () => {
+    const array = [];
+    const iteratee = (x) => x * 2;
+    expect(map(array, iteratee)).toEqual([]);
+  });
 });

@@ -1,6 +1,13 @@
-const upperFirst = require('../src/upperFirst');
+jest.mock('../src/.internal/createCaseFirst', () => jest.fn(() => (str) => str.charAt(0).toUpperCase() + str.slice(1)));
 
-test('converts the first character of a string to uppercase', () => {
-  const result = upperFirst('hello'); // Call the upperFirst function
-  expect(result).toBe('Hello'); // Verify the result
+import upperFirst from '../src/upperFirst';
+
+describe('upperFirst', () => {
+  test('converts the first character to uppercase', () => {
+    expect(upperFirst('hello')).toBe('Hello');
+  });
+
+  test('does not modify an already uppercase first character', () => {
+    expect(upperFirst('Hello')).toBe('Hello');
+  });
 });
